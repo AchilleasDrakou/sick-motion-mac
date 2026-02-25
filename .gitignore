@@ -1,0 +1,7 @@
+.build/
+.swiftpm/
+.cache/
+dist/
+raycast-extension/node_modules/
+raycast-extension/dist/
+*.DS_Store

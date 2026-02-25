@@ -1,0 +1,55 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "sick-motion",
+  "title": "Sick Motion",
+  "description": "Control a macOS motion dots overlay from Raycast.",
+  "icon": "icon.png",
+  "author": "raycast",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "toggle-motion-dots",
+      "title": "Toggle Motion Dots",
+      "description": "Toggle the motion dots overlay on/off",
+      "mode": "no-view"
+    },
+    {
+      "name": "enable-motion-dots",
+      "title": "Enable Motion Dots",
+      "description": "Turn on the motion dots overlay",
+      "mode": "no-view"
+    },
+    {
+      "name": "disable-motion-dots",
+      "title": "Disable Motion Dots",
+      "description": "Turn off the motion dots overlay",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "sickMotionCtlPath",
+      "title": "sickmotionctl Path",
+      "description": "Optional full path to the sickmotionctl binary.",
+      "type": "textfield",
+      "required": false
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.80.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.8",
+    "@types/node": "^20.12.7",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
