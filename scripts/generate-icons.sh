@@ -3,6 +3,8 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT_DIR="$ROOT/raycast-extension"
+ASSETS_DIR="$OUT_DIR/assets"
+mkdir -p "$ASSETS_DIR"
 
 # Light-theme base icon (used by Raycast by default)
 magick -size 512x512 xc:none \
@@ -19,7 +21,7 @@ magick -size 512x512 xc:none \
   -draw 'circle 108,256 118,256' \
   -draw 'circle 430,256 417,256' \
   -draw 'circle 404,256 394,256' \
-  "$OUT_DIR/icon.png"
+  "$ASSETS_DIR/icon.png"
 
 # Dark-theme alternate icon (for dark appearance mode)
 magick -size 512x512 xc:none \
@@ -36,7 +38,7 @@ magick -size 512x512 xc:none \
   -draw 'circle 108,256 118,256' \
   -draw 'circle 430,256 417,256' \
   -draw 'circle 404,256 394,256' \
-  "$OUT_DIR/icon@dark.png"
+  "$ASSETS_DIR/icon@dark.png"
 
-echo "Generated: $OUT_DIR/icon.png"
-echo "Generated: $OUT_DIR/icon@dark.png"
+echo "Generated: $ASSETS_DIR/icon.png"
+echo "Generated: $ASSETS_DIR/icon@dark.png"

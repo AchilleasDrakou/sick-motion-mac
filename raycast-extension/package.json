@@ -1,10 +1,11 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "sick-motion",
+  "version": "1.0.0",
   "title": "Sick Motion",
   "description": "Control a macOS motion dots overlay from Raycast.",
   "icon": "icon.png",
-  "author": "raycast",
+  "author": "achilleas_drakou",
   "license": "MIT",
   "commands": [
     {

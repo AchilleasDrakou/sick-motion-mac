@@ -8,7 +8,8 @@ export default async function main() {
     await runSickMotionAction("toggle");
     await showHUD("Motion dots toggled");
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Failed to toggle motion dots";
+    const message =
+      error instanceof Error ? error.message : "Failed to toggle motion dots";
     await showHUD(message);
   }
 }

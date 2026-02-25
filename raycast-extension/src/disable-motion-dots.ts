@@ -8,7 +8,8 @@ export default async function main() {
     await runSickMotionAction("disable");
     await showHUD("Motion dots disabled");
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Failed to disable motion dots";
+    const message =
+      error instanceof Error ? error.message : "Failed to disable motion dots";
     await showHUD(message);
   }
 }

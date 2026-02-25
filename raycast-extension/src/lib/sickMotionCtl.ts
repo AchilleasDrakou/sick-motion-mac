@@ -19,7 +19,7 @@ function candidatePaths(preferencePath?: string): string[] {
     "/usr/local/bin/sickmotionctl",
     "/opt/homebrew/bin/sickmotionctl",
     join(homedir(), ".local", "bin", "sickmotionctl"),
-    join(process.cwd(), ".build", "release", "sickmotionctl")
+    join(process.cwd(), ".build", "release", "sickmotionctl"),
   ];
 
   if (!preferencePath?.trim()) {
@@ -31,18 +31,22 @@ function candidatePaths(preferencePath?: string): string[] {
 
 function resolveBinaryPath(): string {
   const { sickMotionCtlPath } = getPreferenceValues<Preferences>();
-  const binary = candidatePaths(sickMotionCtlPath).find((path) => existsSync(path));
+  const binary = candidatePaths(sickMotionCtlPath).find((path) =>
+    existsSync(path),
+  );
 
   if (!binary) {
     throw new Error(
-      "Could not find sickmotionctl. Build and install it first, for example: `swift build -c release && cp .build/release/sickmotionctl /usr/local/bin/`."
+      "Could not find sickmotionctl. Build and install it first, for example: `swift build -c release && cp .build/release/sickmotionctl /usr/local/bin/`.",
     );
   }
 
   return binary;
 }
 
-export async function runSickMotionAction(action: SickMotionAction): Promise<void> {
+export async function runSickMotionAction(
+  action: SickMotionAction,
+): Promise<void> {
   const binary = resolveBinaryPath();
   await execFileAsync(binary, [action], { timeout: 3000 });
 }
