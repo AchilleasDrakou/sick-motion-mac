@@ -41,6 +41,8 @@ cat > "$APP_DIR/Contents/Info.plist" <<'PLIST'
   <string>13.0</string>
   <key>LSUIElement</key>
   <true/>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Sick Motion uses location updates to estimate vehicle acceleration and turning for motion cues.</string>
   <key>NSHighResolutionCapable</key>
   <true/>
 </dict>
